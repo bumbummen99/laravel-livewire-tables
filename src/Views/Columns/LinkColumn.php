@@ -18,11 +18,11 @@ class LinkColumn extends Column
     protected $locationCallback;
     protected $attributesCallback;
 
-    public function __construct(string $title, string $from = null, bool $query = false)
+    public function __construct(string $title, string $from = null)
     {
         parent::__construct($title, $from);
 
-        if (! $query) {
+        if (is_null($from)) {
             $this->label(fn () => null);
         }
     }
